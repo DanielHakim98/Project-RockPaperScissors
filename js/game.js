@@ -86,8 +86,8 @@ function game(){
     
 }
 
-var playerCounter = 0;
-var comCounter    = 0;   
+    let playerCounter = 0;
+    let comCounter    = 0;   
     do{
         
         game();
