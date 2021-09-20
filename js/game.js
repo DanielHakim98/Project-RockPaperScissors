@@ -6,13 +6,13 @@ function game(){
         do
         {
             playerSelection=prompt('Choose "rock","paper" or "scissors":'); 
-    
-            if(playerSelection==="rock")return playerSelection;
-            else if(playerSelection==="paper")return playerSelection;
-            else if(playerSelection==="scissors")return playerSelection;
+            
+            if(playerSelection.toLowerCase()==="rock")return playerSelection;
+            else if(playerSelection.toLowerCase()==="paper")return playerSelection;
+            else if(playerSelection.toLowerCase()==="scissors")return playerSelection;
     
         
-        } while( playerSelection==="" || playerSelection!=="rock" || playerSelection!=="paper" || playerSelection!=="scissors");
+        } while( playerSelection==="" || playerSelection.toLowerCase()!=="rock" || playerSelection.toLowerCase()!=="paper" || playerSelection.toLowerCase()!=="scissors");
         return playerSelection;
     }
     
@@ -78,6 +78,7 @@ function game(){
     }
     
     let playerSelection=playerInput();
+    playerSelection=playerSelection.toLowerCase();
     console.log("You selected: ", playerSelection);
     const computerSelection = computerPlay();
     console.log("COM selected: ", computerSelection);
@@ -91,8 +92,8 @@ var comCounter    = 0;
         
         game();
         console.log(`Player: ${playerCounter}, COM: ${comCounter}`);
-        if(playerCounter==5)console.log("Ahoi! You're the absolutey winner");
-        else if(comCounter==5) console.log("Too bad you lose. Don't worry try again next time");
+        if(playerCounter==5)alert("Ahoi! You're the absolute winner");
+        else if(comCounter==5) alert("Too bad you lose. Don't worry try again next time");
     
 
     }while(playerCounter<5 && comCounter<5);
