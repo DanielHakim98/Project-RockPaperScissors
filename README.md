@@ -13,3 +13,6 @@ So here's my update on the project.
 20 Sep 21:
 -Input now is case insensitive. All input will be converted to lower case if the inputs are either "rock", "paper" and "scissors".
 -Change 'var' for playerCounter and comCounter into 'let' because why use the old 'var' when you can use 'let' for variable.
+
+22 Sep 21:
+-Change the postiion of the counter declaration and initialization for both player and com. I guess.

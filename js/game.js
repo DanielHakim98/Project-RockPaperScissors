@@ -1,22 +1,55 @@
+    let playerCounter = 0;
+    let comCounter    = 0;   
+    do{
+        
+        game();
+        console.log(`Player: ${playerCounter}, COM: ${comCounter}`);
+        if(playerCounter==5)alert("Ahoi! You're the absolute winner");
+        else if(comCounter==5) alert("Too bad you lose. Don't worry try again next time");
+    
+
+    }while(playerCounter<5 && comCounter<5);
+    
+
 function game(){
+
+    
+    let playerSelection=playerInput();
+    playerSelection=playerSelection.toLowerCase();
+    console.log("You selected: ", playerSelection);
+    const computerSelection = computerPlay();
+    console.log("COM selected: ", computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+
+
     function playerInput(){  /*Function for receiving input from user and return back to main function*/
     
-        let playerSelection;
+        let userInput;
     
         do
         {
-            playerSelection=prompt('Choose "rock","paper" or "scissors":'); 
+            userInput=prompt('Choose "rock","paper" or "scissors":'); 
             
-            if(playerSelection.toLowerCase()==="rock")return playerSelection;
-            else if(playerSelection.toLowerCase()==="paper")return playerSelection;
-            else if(playerSelection.toLowerCase()==="scissors")return playerSelection;
+            if(userInput.toLowerCase()==="rock")return userInput;
+            else if(userInput.toLowerCase()==="paper")return userInput;
+            else if(userInput.toLowerCase()==="scissors")return userInput;
     
         
-        } while( playerSelection==="" || playerSelection.toLowerCase()!=="rock" || playerSelection.toLowerCase()!=="paper" || playerSelection.toLowerCase()!=="scissors");
-        return playerSelection;
+        } while( userInput==="" || userInput.toLowerCase()!=="rock" || 
+            userInput.toLowerCase()!=="paper" || userInput.toLowerCase()!=="scissors");
+
+        return userInput;
+    }
+
+    function computerPlay(){            /*Function for randomizing the selection made by the COM*/
+        let randomNum = Math.floor(Math.random()*(9-1+1))+1;
+        let randomAns = (randomNum == 1|| randomNum==5 || randomNum==9)?"rock"
+        :(randomNum==2||randomNum==6||randomNum==7)?"paper"
+        :"scissors";
+        return randomAns;
     }
     
-    function playRound(playerSelection, computerSelection){ /*Function for checking who wins, you or the processors behind the screeen*/
+    function playRound(playerSelection, computerSelection){ /*Function for checking who wins the round*/
         if(playerSelection==="rock")
         {   switch(computerSelection){
     
@@ -67,34 +100,7 @@ function game(){
                 break;
             }
         }
-    }
-    
-    function computerPlay(){            /*Function for randomizing the selection made by the COM*/
-        let randomNum = Math.floor(Math.random()*(9-1+1))+1;
-        let randomAns = (randomNum == 1|| randomNum==5 || randomNum==9)?"rock"
-        :(randomNum==2||randomNum==6||randomNum==7)?"paper"
-        :"scissors";
-        return randomAns;
-    }
-    
-    let playerSelection=playerInput();
-    playerSelection=playerSelection.toLowerCase();
-    console.log("You selected: ", playerSelection);
-    const computerSelection = computerPlay();
-    console.log("COM selected: ", computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-    
+    }    
 }
 
-    let playerCounter = 0;
-    let comCounter    = 0;   
-    do{
-        
-        game();
-        console.log(`Player: ${playerCounter}, COM: ${comCounter}`);
-        if(playerCounter==5)alert("Ahoi! You're the absolute winner");
-        else if(comCounter==5) alert("Too bad you lose. Don't worry try again next time");
-    
-
-    }while(playerCounter<5 && comCounter<5);
     
