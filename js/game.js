@@ -1,35 +1,29 @@
-    let playerCounter = 0;
-    let comCounter    = 0;   
-    do{
-        
-        game();
-        console.log(`Player: ${playerCounter}, COM: ${comCounter}`);
-        if(playerCounter==5)alert("Ahoi! You're the absolute winner");
-        else if(comCounter==5) alert("Too bad you lose. Don't worry try again next time");
-    
+let playerCounter = 0;
+let comCounter    = 0;
 
-    }while(playerCounter<5 && comCounter<5);
+do{
+        
+    game();
+    console.log(`Player: ${playerCounter}, COM: ${comCounter}`);
+    if(playerCounter==5)alert("Ahoi! You're the absolute winner");
+    else if(comCounter==5) alert("Too bad you lose. Don't worry try again next time");
+
+}while(playerCounter<5 && comCounter<5);
     
 
 function game(){
 
-    
-    let playerSelection=playerInput();
-    playerSelection=playerSelection.toLowerCase();
+    let playerSelection=userInput();
     console.log("You selected: ", playerSelection);
     const computerSelection = computerPlay();
     console.log("COM selected: ", computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
+    playRound(playerSelection, computerSelection);
 
 
-    function playerInput(){  /*Function for receiving input from user and return back to main function*/
-    
-        let userInput;
-    
-        do
-        {
+    function userInput(){
+
+        do{
             userInput=prompt('Choose "rock","paper" or "scissors":'); 
-            
             if(userInput.toLowerCase()==="rock")return userInput;
             else if(userInput.toLowerCase()==="paper")return userInput;
             else if(userInput.toLowerCase()==="scissors")return userInput;
@@ -41,7 +35,7 @@ function game(){
         return userInput;
     }
 
-    function computerPlay(){            /*Function for randomizing the selection made by the COM*/
+    function computerPlay(){                                                            /*Function for randomizing the selection made by the COM*/
         let randomNum = Math.floor(Math.random()*(9-1+1))+1;
         let randomAns = (randomNum == 1|| randomNum==5 || randomNum==9)?"rock"
         :(randomNum==2||randomNum==6||randomNum==7)?"paper"
@@ -49,7 +43,7 @@ function game(){
         return randomAns;
     }
     
-    function playRound(playerSelection, computerSelection){ /*Function for checking who wins the round*/
+    function playRound(playerSelection, computerSelection){                             /*Function for checking who wins the round*/
         if(playerSelection==="rock")
         {   switch(computerSelection){
     
@@ -102,5 +96,3 @@ function game(){
         }
     }    
 }
-
-    

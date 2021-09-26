@@ -16,3 +16,8 @@ So here's my update on the project.
 
 22 Sep 21:
 -Change the postiion of the counter declaration and initialization for both player and com. I guess.
+
+27 Sep 21:
+-Change input from prompt to click. Still not perfect though. Spent a lot of time understanding the DOM manipulation JS especially on querySelector and getByTagName.
+-This is one most challenging concept for me since I've never done any web development before especially on making dynamic webpages.
+-The last time I feel this kind of difficulty is when I was trying to understand the concept of content, padding , border, margin and position.
