@@ -1,6 +1,7 @@
 This is my first project with Javascript. After years left programming in C and C++, finally I'm actively doing programming project with Javascript. Well at least it's less strict compare to C/C++.
 Here is the code for Rock, Paper and Scissors.
 So here's my update on the project.
+Webpage link: https://danielhakim98.github.io/Project-RockPaperScissors/
 
 19 Sep 21:
 -Bascially, the code run really well, no bugs as for now but surely there are room for improvement.
