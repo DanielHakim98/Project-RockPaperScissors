@@ -21,3 +21,9 @@ So here's my update on the project.
 -Change input from prompt to click. Still not perfect though. Spent a lot of time understanding the DOM manipulation JS especially on querySelector and getByTagName.
 -This is one most challenging concept for me since I've never done any web development before especially on making dynamic webpages.
 -The last time I feel this kind of difficulty is when I was trying to understand the concept of content, padding , border, margin and position.
+
+28 Sep 21:
+-Add CSS styling on the pages.
+-Figure out how to use querySelector,textContent,forEach for DOM manipulation.
+-Spend a lot of time reading the difference between Nodelist and HTML collection. Basically, Both are interface in DOM but HTML collection only contains element nodes and could not use array-like method such as forEach. Nodelist contains all types of nodes including attributes, text, elements and it can be enumerated using forEach loop.
+-However, I found out that I can also manipulate HTML Collection using forEach if i put it in spread operator.
