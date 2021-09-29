@@ -140,5 +140,12 @@ footer a{
     color: #B2D2E4;
 }
 
+.img1,.img2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000C66;
+}
+
 
 

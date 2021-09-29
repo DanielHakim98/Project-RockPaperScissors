@@ -28,3 +28,7 @@ Webpage link: https://danielhakim98.github.io/Project-RockPaperScissors/
 -Figure out how to use querySelector,textContent,forEach for DOM manipulation.
 -Spend a lot of time reading the difference between Nodelist and HTML collection. Basically, Both are interface in DOM but HTML collection only contains element nodes and could not use array-like method such as forEach. Nodelist contains all types of nodes including attributes, text, elements and it can be enumerated using forEach loop.
 -However, I found out that I can also manipulate HTML Collection using forEach if i put it in spread operator.
+
+
+29 Sep 21:
+-make some tweaks on the results image placeholder and on HTML file because it doesn't meet w3 validation standard.

@@ -12,8 +12,9 @@ let resultContainer=document.querySelector('.results');
 btns.forEach((btn)=>{
     btn.addEventListener('click',(e)=>{
         console.log(e);
+        console.log(e.target);
+        console.log(e.target.id);
         playerSelection=e.target.id;
-        console.log(playerSelection);
         if(playerSelection=="") return;
         game(playerSelection,e.target.src);
         console.log(`Player: ${playerCounter}, COM: ${comCounter}`); 
@@ -33,6 +34,7 @@ function game(playerSelection,source1){
 function updatePhoto(source,comSelection){
     let source2;
     allScore.textContent=`You : ${playerCounter} - ${comCounter} : COM `;
+
     btns.forEach((btn)=>{
         [...btn.children].forEach((btn)=>{
             if(btn.firstElementChild.id==comSelection) source2=btn.firstElementChild.src;
@@ -65,6 +67,8 @@ function resetGame(){
     allScore.textContent=`You : ${playerCounter} - ${comCounter} : COM `;
     playerGUI.setAttribute('src',"");
     comGUI.setAttribute('src',"");
+    playerGUI.setAttribute('class','img1');
+    comGUI.setAttribute('class','img2');
     console.clear();
     statement.textContent="Get Ready!"
     console.log("Game has been reset and restart again.")
