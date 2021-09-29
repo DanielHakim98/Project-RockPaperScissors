@@ -30,7 +30,7 @@ header{
     color:#050A30;
 }
 
-.description p{
+.description strong{
     font-size: .75rem;
     padding: 1em;
 }
