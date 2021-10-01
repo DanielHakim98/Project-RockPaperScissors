@@ -32,3 +32,6 @@ Webpage link: https://danielhakim98.github.io/Project-RockPaperScissors/
 
 29 Sep 21:
 -make some tweaks on the results image placeholder and on HTML file because it doesn't meet w3 validation standard.
+
+2 Oct 21:
+-some change on the alert once player or COM has won five games. Small changes on the interface and reset button is added.

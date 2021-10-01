@@ -13,8 +13,8 @@ header{
     display:  flex;
     justify-content: center;
     align-items: center;
-    background-color: #B2D2E4;
-    color: #050A30;
+    background-color:  #050A30;
+    color: #B2D2E4;
     font-size: 2rem;
     padding: .5em;
     font-weight: 700;
@@ -80,7 +80,6 @@ header{
 
 .results{
     display: flex;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -95,6 +94,28 @@ header{
     max-width:200px;
     width: 100%;
     height:auto;
+    animation-name: coming;
+    animation-duration: .4s;
+    box-shadow: 0 0 10px 1px #000C66;
+}
+
+
+.imgResults2{
+    max-width:200px;
+    width: 100%;
+    height:auto;
+    animation-name: coming;
+    animation-duration: .4s;
+    box-shadow: 0 0 10px 1px crimson;
+}
+@keyframes coming {
+    0% {
+        transform:scale(1.4);
+      
+      }
+      100% {
+       transform:scale(1.1);
+      }
 }
 
 .results img {
@@ -113,6 +134,9 @@ header{
     font-weight: 600;
 }
 
+.magicWords{
+    text-align: center;
+}
 footer{
     display: flex;
     flex-direction: column;

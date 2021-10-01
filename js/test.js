@@ -7,20 +7,24 @@ let comGUI=document.querySelector('.img2');
 let allScore=document.querySelector('.playerCom');
 let statement=document.querySelector('.statement');
 let resultContainer=document.querySelector('.results');
-
+const btnReset=document.createElement('button');
+btnReset.textContent='Reset';
 
 btns.forEach((btn)=>{
-    btn.addEventListener('click',(e)=>{
-        console.log(e);
-        console.log(e.target);
-        console.log(e.target.id);
-        playerSelection=e.target.id;
-        if(playerSelection=="") return;
-        game(playerSelection,e.target.src);
-        console.log(`Player: ${playerCounter}, COM: ${comCounter}`); 
-        whoisWinning(playerCounter,comCounter);      
-    });
+    btn.addEventListener('click',startGame);
 });
+
+
+function startGame(e){
+    console.log(e);
+    console.log(e.target);
+    console.log(e.target.id);
+    playerSelection=e.target.id;
+    if(playerSelection=="") return;
+    game(playerSelection,e.target.src);
+    console.log(`Player: ${playerCounter}, COM: ${comCounter}`); 
+    whoisWinning(playerCounter,comCounter);      
+}
 
 function game(playerSelection,source1){
 
@@ -43,20 +47,31 @@ function updatePhoto(source,comSelection){
     
     playerGUI.setAttribute('class','imgResults');
     playerGUI.setAttribute('src',source);
-    comGUI.setAttribute('class','imgResults');
+    comGUI.setAttribute('class','imgResults2');
     comGUI.setAttribute('src',source2);
 }
 
 
 function whoisWinning(playerCounter,comCounter){
     if(playerCounter==5){
-        alert("Ahoi! You're the absolute winner");
-        resetGame();
+        allScore.style.color='green'
+        allScore.textContent="Ahoi! You're the absolute winner";
+        document.querySelector('.magicWords').appendChild(btnReset);
+        btns.forEach((btn)=>{
+            btn.removeEventListener('click',startGame);
+        });
+        btnReset.addEventListener('click',resetGame);
     }   
 
     else if(comCounter==5){
-        alert("Too bad you lose. Don't worry try again next time");
-        resetGame();
+        allScore.style.color='crimson'
+        allScore.textContent="Too bad you lose. Don't worry try again next time";
+        document.querySelector('.magicWords').appendChild(btnReset);
+        btns.forEach((btn)=>{
+            btn.removeEventListener('click',startGame);
+        });
+        btnReset.addEventListener('click',resetGame);
+        
     }
     
 }
@@ -69,9 +84,14 @@ function resetGame(){
     comGUI.setAttribute('src',"");
     playerGUI.setAttribute('class','img1');
     comGUI.setAttribute('class','img2');
+    allScore.style.color='#050A30';
+    btns.forEach((btn)=>{
+        btn.addEventListener('click',startGame);
+    });
     console.clear();
     statement.textContent="Get Ready!"
     console.log("Game has been reset and restart again.")
+  
 }   
 
 function computerPlay(){                                                            /*Function for randomizing the selection made by the COM*/
