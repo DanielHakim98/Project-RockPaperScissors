@@ -80,10 +80,11 @@ header{
 
 .results{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 5em;
+    gap: 2em;
     padding: 1em;
     background-color: #B2D2E4;
     color: #050A30;
@@ -96,7 +97,8 @@ header{
     height:auto;
     animation-name: coming;
     animation-duration: .4s;
-    box-shadow: 0 0 10px 1px #000C66;
+    border: 1px solid #000C66;
+    /* box-shadow: 0 0 10px 1px #000C66; */
 }
 
 
@@ -106,7 +108,8 @@ header{
     height:auto;
     animation-name: coming;
     animation-duration: .4s;
-    box-shadow: 0 0 10px 1px crimson;
+    border: 1px solid #000C66;
+    /* box-shadow: 0 0 10px 1px #000C66; */
 }
 @keyframes coming {
     0% {
@@ -116,6 +119,11 @@ header{
       100% {
        transform:scale(1.1);
       }
+}
+
+.imgGUI{
+    display: flex;
+    gap: 2em;
 }
 
 .results img {
@@ -171,6 +179,4 @@ footer a{
     justify-content: center;
     border: 1px solid #000C66;
 }
-
-
 
