@@ -16,9 +16,6 @@ btns.forEach((btn)=>{
 
 
 function startGame(e){
-    console.log(e);
-    console.log(e.target);
-    console.log(e.target.id);
     playerSelection=e.target.id;
     if(playerSelection=="") return;
     game(playerSelection,e.target.src);
